@@ -1,11 +1,13 @@
 import React from "react"
+import card_image from "./Images/card_image.png"
+import Star from "./Images/Star.png"
 
 export default function Card(){
     return(
         <div className="card">
-            <img src="../images/card_image.png" className="card--image"/>
+            <img src={card_image} className="card--image"/>
             <div className = "card--stats"/>
-                <img src="../images/star.png" alt="small star" className="card--star"/>
+                <img src={Star} alt="small star" className="card--star"/>
                 <span>5.0</span>
                 <span className="gray">(6) • </span>
                 <span className="gray">USA</span>
