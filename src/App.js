@@ -2,38 +2,29 @@ import React from "react"
 import Navbar from "./Components/Navbar"
 import Hero from "./Components/Hero"
 import Card from "./Components/Card"
-
+import data from "./data"
 
 export default function App() {
+    const cards = data.map((item)=>{
+        return(
+            <Card 
+                key={item.id}
+                img={item.coverImg}
+                rating={item.stats.rating}
+                reviewCount={item.stats.reviewCount}
+                location={item.location}
+                title={item.title}
+                price={item.price}
+                openSpots={item.openSpots}
+            />
+        )
+    })
     return (
         <div>
             <Navbar />
             <Hero/>
             <section className="cards">
-            <Card
-            img="./Images/card_image1.png"
-            rating="5.0"
-            people="6"
-            country="USA"
-            title="Life Lessons with Katie Zaferes"
-            price="$136"
-            />
-            <Card
-            img="./Images/card_image2.png"
-            rating="5.0"
-            people="30"
-            country="USA"
-            title="Learn wedding photography"
-            price="$125"
-            />
-            <Card
-            img="./Images/card_image3.png"
-            rating="4.8"
-            people="2"
-            country="USA"
-            title="Group Mountain Biking"
-            price="$50"
-            />
+            {cards}
             </section>
         </div>
     )
